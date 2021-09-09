@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc6423761c1fb842874054df114c0e6, type: 3}
+  m_Name: ShooterStats
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  movementSpeed: 10
+  healthPoints: 50
+  shootPaceTime: 0.4
+  bullet: {fileID: 822861319517669019, guid: cbe9a568789b36f458ac6b59f677bb49, type: 3}
