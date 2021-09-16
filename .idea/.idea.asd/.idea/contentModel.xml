@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\DIJJ\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\DIJJ\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_asd.1596841766.00" t="ExcludeRecursive" />
+    <e p="D:\Projects\Unity\qwe" t="IncludeRecursive">
+      <e p="asd.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Main" t="Include">
+          <e p="ScriptableObjects" t="Include">
+            <e p="PlayerSObj.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="HealthSystem" t="Include">
+              <e p="Health.cs" t="Include" />
+              <e p="HealthManager.cs" t="Include" />
+            </e>
+            <e p="PlayerScripts" t="Include">
+              <e p="PlayerInputs.cs" t="Include" />
+              <e p="ShooterPlayerController.cs" t="Include" />
+              <e p="SupportPlayerController.cs" t="Include" />
+            </e>
+            <e p="SimpleCameraController.cs" t="Include" />
+            <e p="Timer.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UnityAssets" t="Include">
+          <e p="Hierarchy 2" t="Include">
+            <e p="Editor" t="Include">
+              <e p="GroupSelection.cs" t="Include" />
+              <e p="HierarchyCanvas.cs" t="Include" />
+              <e p="HierarchyEditor.cs" t="Include" />
+              <e p="HierarchyFolderEditor.cs" t="Include" />
+              <e p="HierarchyLocalDataEditor.cs" t="Include" />
+              <e p="HierarchyResources.cs" t="Include" />
+              <e p="HierarchySettings.cs" t="Include" />
+              <e p="IHierarchyElement.cs" t="Include" />
+              <e p="IHierarchyShelf.cs" t="Include" />
+              <e p="InstantInspector.cs" t="Include" />
+              <e p="ObjectCustomization.cs" t="Include" />
+              <e p="OpenSettings.cs" t="Include" />
+              <e p="SceneRenamePopup.cs" t="Include" />
+              <e p="SelectionsRenamePopup.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="CustomRowItem.cs" t="Include" />
+              <e p="HierarchyFolder.cs" t="Include" />
+              <e p="HierarchyLocalData.cs" t="Include" />
+              <e p="Texture2DExtensions.cs" t="Include" />
+              <e p="UIElements.cs" t="Include" />
+              <e p="VisualElementExstensions.cs" t="Include" />
+            </e>
+          </e>
+          <e p="TopDown 2D RPG BE3" t="Include">
+            <e p="ReadMe" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="ReadmeEditorBE3.cs" t="Include" />
+                </e>
+                <e p="ReadmeBE3.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

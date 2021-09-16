@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d529fdc8-1e76-48d9-bc5d-1b9778d3dc0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Main/Scripts/HealthSystem/Health.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Main/Scripts/HealthSystem/HealthManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/SupportPlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.asd/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.asd/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.asd/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.asd/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/PlayerInputs.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/PlayerInputs.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/ShooterPlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Main/Scripts/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Main/Scripts/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Main/ScriptableObjects/PlayerSObj.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Main/ScriptableObjects/PlayerSObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/Main/Scripts/bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Main/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Main/Scripts/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Main/Scripts/PlayerScripts/PlayerScript.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1uEVhhQ8mKCA0hPt0h2zsCBd3hD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d529fdc8-1e76-48d9-bc5d-1b9778d3dc0e" name="Default Changelist" comment="" />
+      <created>1624230862272</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624230862272</updated>
+      <workItem from="1624230892332" duration="8000" />
+      <workItem from="1624230941961" duration="11738000" />
+      <workItem from="1624283857149" duration="9071000" />
+      <workItem from="1624297646237" duration="6702000" />
+      <workItem from="1624381945899" duration="2021000" />
+      <workItem from="1624539358396" duration="83000" />
+      <workItem from="1624817423440" duration="246000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
