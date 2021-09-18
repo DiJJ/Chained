@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -23,5 +24,10 @@ public class Bullet : MonoBehaviour
     {
         if (!_destroyTimer.isTurnedOn)
             Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(gameObject);
     }
 }

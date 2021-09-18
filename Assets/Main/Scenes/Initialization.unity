@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 977899743}
   m_Layer: 0
   m_Name: HealthManager
-  m_TagString: GameController
+  m_TagString: HealthManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
