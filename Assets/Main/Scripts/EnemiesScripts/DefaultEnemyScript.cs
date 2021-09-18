@@ -7,7 +7,7 @@ public class DefaultEnemyScript : MonoBehaviour
         if (!other.gameObject.CompareTag("Player"))
             return;
         var obj = GameObject.FindWithTag("HealthManager");
-        if (TryGetComponent(out HealthManager healthManager))
+        if (obj.TryGetComponent(out HealthManager healthManager))
         {
             healthManager.Damage(10);
             Debug.Log(healthManager.ReceiverHealth.Current);
