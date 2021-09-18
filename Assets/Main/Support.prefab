@@ -14,13 +14,13 @@ GameObject:
   - component: {fileID: 538426469927845927}
   - component: {fileID: 538426469927845926}
   - component: {fileID: 1739953768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Support
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &538426469927845922
 Transform:
   m_ObjectHideFlags: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 4b76827ec5098b0419d6bfe27e196ab3, type: 2}
   controls: {fileID: 538426469927845927}
+  rb2d: {fileID: 1739953768}
 --- !u!50 &1739953768
 Rigidbody2D:
   serializedVersion: 4
@@ -326,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538426470582516962}
   - component: {fileID: 538426470582516963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}

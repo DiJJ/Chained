@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7203385732391484858}
   - component: {fileID: 7203385732391484859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7203385732594538570}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: gunPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7203385732668606887}
   - component: {fileID: 7203385732668606886}
   - component: {fileID: 1527109395442430476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shooter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 96608085fcc075a45b42df19bfdecb47, type: 2}
+  rb2d: {fileID: 1527109395442430476}
   gunPoint: {fileID: 7203385732594538570}
   controls: {fileID: 7203385732668606887}
 --- !u!50 &1527109395442430476

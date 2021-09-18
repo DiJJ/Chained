@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D _rb2d;
     private Timer _destroyTimer;
     [SerializeField] private float destroyTime = 2f;
+    [SerializeField] private ParticleSystem particles;
     void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -28,6 +29,8 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        particles.transform.parent = null;
+        particles.Play();
         Destroy(gameObject);
     }
 }
