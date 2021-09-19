@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HealthManager
   - SceneManager
+  - Damageable
   layers:
   - Default
   - TransparentFX

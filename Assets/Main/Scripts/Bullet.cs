@@ -29,6 +29,15 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("Damageable"))
+        {
+            var damageable = other.gameObject;
+            if (damageable.TryGetComponent(out DefaultEnemyScript enemy))
+            {
+                enemy.health.Damage(10);
+                Debug.Log(enemy.health.Current);
+            }
+        }
         particles.transform.parent = null;
         particles.Play();
         Destroy(gameObject);

@@ -52,12 +52,10 @@ public class ShooterPlayerController : MonoBehaviour
             return;
         
         _lookInputs = context.ReadValue<Vector2>();
-        Debug.Log(_lookInputs);
     }
 
     public void FireState(InputAction.CallbackContext context)
     {
-        Debug.Log("Pressed");
         if (context.performed)
             return;
         

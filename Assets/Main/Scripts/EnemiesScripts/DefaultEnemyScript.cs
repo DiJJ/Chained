@@ -2,6 +2,22 @@ using UnityEngine;
 
 public class DefaultEnemyScript : MonoBehaviour
 {
+    [SerializeField] private DefaultEnemySObj enemyData;
+    [SerializeField] private Rigidbody2D rb2d;
+
+    public Health health;
+
+    void Start()
+    {
+        health = new Health(enemyData.healthPoints);
+    }
+
+    void Update()
+    {
+        if (health.Current <= 0)
+            Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (!other.gameObject.CompareTag("Player"))
@@ -9,7 +25,7 @@ public class DefaultEnemyScript : MonoBehaviour
         var obj = GameObject.FindWithTag("HealthManager");
         if (obj.TryGetComponent(out HealthManager healthManager))
         {
-            healthManager.Damage(10);
+            healthManager.Damage(enemyData.attackDamage);
             Debug.Log(healthManager.ReceiverHealth.Current);
         }
         else

@@ -594,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Support
       objectReference: {fileID: 0}
+    - target: {fileID: 538426469927845925, guid: 6c126cea69e19e74388f8eaf398e3287, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 538426469927845927, guid: 6c126cea69e19e74388f8eaf398e3287, type: 3}
       propertyPath: m_Camera
       value: 
@@ -658,6 +662,10 @@ PrefabInstance:
     - target: {fileID: 7203385732668606939, guid: 2eda474e544f78444a2879232ea3e824, type: 3}
       propertyPath: m_Name
       value: Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203385732668606939, guid: 2eda474e544f78444a2879232ea3e824, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eda474e544f78444a2879232ea3e824, type: 3}

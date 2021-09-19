@@ -39,7 +39,6 @@ public class SupportPlayerController : MonoBehaviour
             return;
         
         _lookInputs = context.ReadValue<Vector2>();
-        Debug.Log(_lookInputs);
     }
 
     public void Switch(InputAction.CallbackContext context)
