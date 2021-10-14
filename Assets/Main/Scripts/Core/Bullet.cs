@@ -1,4 +1,5 @@
 using System;
+using Main.Scripts.Enemy;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -7,12 +8,12 @@ public class Bullet : MonoBehaviour
     private Timer _destroyTimer;
     [SerializeField] private float destroyTime = 2f;
     [SerializeField] private ParticleSystem particles;
-    void Awake()
+    private void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Start()
     {
         _rb2d.velocity = transform.right * 20f;
         
@@ -21,25 +22,25 @@ public class Bullet : MonoBehaviour
         _destroyTimer.StartTimer();
     }
 
-    void Update()
+    private void Update()
     {
         if (!_destroyTimer.isTurnedOn)
             Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    private void DestroyParticle()
     {
-        if (other.gameObject.CompareTag("Damageable"))
-        {
-            var damageable = other.gameObject;
-            if (damageable.TryGetComponent(out DefaultEnemyScript enemy))
-            {
-                enemy.health.Damage(10);
-                Debug.Log(enemy.health.CurrentHealth);
-            }
-        }
         particles.transform.parent = null;
         particles.Play();
         Destroy(gameObject);
+    }
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.Damage(10);
+        }
+        DestroyParticle();
     }
 }
