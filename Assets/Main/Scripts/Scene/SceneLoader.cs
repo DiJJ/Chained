@@ -7,6 +7,6 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("_Main", LoadSceneMode.Additive);
     }
 }

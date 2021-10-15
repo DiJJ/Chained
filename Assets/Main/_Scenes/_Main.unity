@@ -337,5 +337,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square
       objectReference: {fileID: 0}
+    - target: {fileID: 1239146303787183109, guid: 59a15e36b3500a34389b68de7551a9b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a15e36b3500a34389b68de7551a9b2, type: 3}
