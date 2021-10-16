@@ -14,7 +14,7 @@ namespace Main.Scripts.Actors
         protected Transform target;
 
         protected BaseEnemySO baseEnemySO;
-        protected Health health;
+        protected Health enemyHealth;
         protected EnemyData enemyData;
         
         protected virtual void Awake()
@@ -26,14 +26,14 @@ namespace Main.Scripts.Actors
 
         protected virtual void Start()
         {
-            health.SubscribeOnDamage(CheckHealth);
+            enemyHealth.SubscribeOnDamage(CheckHealth);
         }
         
         public virtual void Setup(EnemyData enemyData)
         {
             this.enemyData = enemyData;
             baseEnemySO = enemyData.BaseEnemySO;
-            health = new Health(baseEnemySO.HealthPoints);
+            enemyHealth = new Health(baseEnemySO.HealthPoints);
             target = enemyData.Target;
         }
 
@@ -47,9 +47,8 @@ namespace Main.Scripts.Actors
         public virtual void Move()
         {
             if (target == null) return;
-            
-            //Instead Vector3.Distance, because of optimization
-            var distance = Mathf.Sqrt((target.position - enemyTransform.position).sqrMagnitude);
+
+            var distance = GetDistanceToTarget();
 
             if (distance > baseEnemySO.StopDistance)
             {
@@ -58,19 +57,23 @@ namespace Main.Scripts.Actors
             }
         }
 
-        public virtual void Attack()
+        //Instead Vector3.Distance, because of optimization
+        private float GetDistanceToTarget() => Mathf.Sqrt((target.position - enemyTransform.position).sqrMagnitude);
+        
+
+        public virtual void Attack(HealthManager healthManager)
         {
-            //TODO: @Ilyas Attack
+            healthManager.Damage(baseEnemySO.AttackDamage);
         }
 
         public virtual void Damage(int value)
         {
-            if (gameObject != null) health.Damage(value);
+            if (gameObject != null) enemyHealth.Damage(value);
         }
 
         public void CheckHealth()
         {
-            if (health.CurrentHealth <= 0)
+            if (enemyHealth.CurrentHealth <= 0)
             {
                 Destroy(gameObject);
             }
@@ -81,9 +84,9 @@ namespace Main.Scripts.Actors
             if (!other.gameObject.CompareTag(TagConstants.Player)) return;
 
             var obj = GameObject.FindWithTag(TagConstants.HealthManager);
-            if (obj.TryGetComponent(out HealthManager healthManager))
+            if (obj.TryGetComponent(out HealthManager playerHealthManager))
             {
-                healthManager.Damage(baseEnemySO.AttackDamage);
+                Attack(playerHealthManager);
                 return;
             }
 
