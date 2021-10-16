@@ -8,11 +8,10 @@ namespace UnityTemplateProjects.Actors.Player
     public class HealthBar : MonoBehaviour
     {
         private HealthManager _healthManager;
-        private UnityAction UpdateAction;
 
         [SerializeField] private Slider _slider;
         
-        private void Start()
+        private void Awake()
         {
             _healthManager = FindObjectOfType<HealthManager>();
             SetupSlider();

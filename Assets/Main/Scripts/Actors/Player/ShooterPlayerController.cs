@@ -16,6 +16,7 @@ namespace Main.Scripts.Actors.Player
         private bool _isFirePressed;
     
         [SerializeField] private PlayerInput controls;
+        [SerializeField] private Transform graphics;
 
         private void Start()
         {
@@ -36,7 +37,7 @@ namespace Main.Scripts.Actors.Player
             rb2d.velocity = Vector2.Lerp(rb2d.velocity, _moveInputs, 1f) * playerData.movementSpeed;
         
             var angle = Mathf.Atan2(_lookInputs.y, _lookInputs.x) * Mathf.Rad2Deg;
-            transform.DORotateQuaternion(
+            graphics.DORotateQuaternion(
                 Quaternion.AngleAxis(angle, Vector3.forward),
                 controls.currentControlScheme == controls.defaultControlScheme ? .08f : Time.fixedDeltaTime);
         }
@@ -84,7 +85,7 @@ namespace Main.Scripts.Actors.Player
             transform.DOKill();
             var position = other.transform.position;
             var dir = transform.position - position;
-            GetComponent<Rigidbody2D>().AddForceAtPosition(dir * 6f, position);
+            rb2d.AddForceAtPosition(dir * 6f, other.GetContact(0).point);
         }
     }
 }
