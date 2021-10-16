@@ -1,35 +1,56 @@
-using Main.Scripts.Core;
+using System.Collections;
 using Main.Scripts.Enemy.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class SpawnerManager : MonoBehaviour
+namespace Main.Scripts.Core
 {
-    [FoldoutGroup("Scriptable Object")][SerializeField] private BaseEnemySO _baseEnemySO;
-    private Transform _target;
-    [SerializeField] private bool _spawnAtOnce = false;
-    [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _startTime = 1;
-    [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _repeatTime = 3;
-
-    private void Start()
+    public class SpawnerManager : MonoBehaviour
     {
-        _target = GameObject.FindGameObjectWithTag(TagConstants.Player).transform;
-        if (_spawnAtOnce == false)
+        [FoldoutGroup("Scriptable Object"), InlineEditor(), SerializeField]
+        private BaseEnemySO _baseEnemySO;
+
+        private Transform _target;
+
+        [SerializeField] private bool _repeatingSpawn = true;
+        [FoldoutGroup("Settings"), ShowIf(nameof(_repeatingSpawn)), SerializeField]
+        private float _delaySpawnTime = 3;
+
+        private void Start()
         {
-            InvokeRepeating(nameof(Spawn), _startTime, _repeatTime);
-        }
-        else
-        {
+            _target = GameObject.FindGameObjectWithTag(TagConstants.Player).transform;
+
+            if (_repeatingSpawn)
+            {
+                StartCoroutine(SpawnRoutine());
+                return;
+            }
+
             Spawn();
         }
-    }
 
-    private void Spawn()
-    {
-        var enemy = Instantiate(_baseEnemySO.EnemyPrefab, transform.position, Quaternion.identity);
-        enemy.Setup(new EnemyData
+        private void Spawn()
         {
-            BaseEnemySO = _baseEnemySO, Target = _target
-        });
+            var enemy = Instantiate(_baseEnemySO.EnemyPrefab, transform.position, Quaternion.identity);
+            enemy.Setup(new EnemyData
+            {
+                BaseEnemySO = _baseEnemySO,
+                Target = _target
+            });
+        }
+
+        private IEnumerator SpawnRoutine()
+        {
+            while (_repeatingSpawn)
+            {
+                Spawn();
+                yield return new WaitForSeconds(_delaySpawnTime);
+            }
+        }
+
+        private void OnDisable()
+        {
+            StopAllCoroutines();
+        }
     }
 }

@@ -235,9 +235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseEnemySO: {fileID: 11400000, guid: 177a19f9eeabf79448fdc515e2fe116d, type: 2}
-  _spawnAtOnce: 0
-  _startTime: 1
-  _repeatTime: 3
+  _repeatingSpawn: 1
+  _delaySpawnTime: 3
 --- !u!4 &983857156
 Transform:
   m_ObjectHideFlags: 0

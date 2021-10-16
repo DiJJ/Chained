@@ -3,7 +3,7 @@ using Main.Scripts.Enemy.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Main.Scripts.Enemy
+namespace Main.Scripts.Actors.Enemy
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BaseEnemy : MonoBehaviour, IEnemy
@@ -50,6 +50,8 @@ namespace Main.Scripts.Enemy
 
         public virtual void Move()
         {
+            if (target == null) return;
+            
             //Instead Vector3.Distance, because of optimization
             var distance = Mathf.Sqrt((target.position - enemyTransform.position).sqrMagnitude);
 
@@ -67,9 +69,9 @@ namespace Main.Scripts.Enemy
 
         public virtual void Damage(int value)
         {
-            OnHealth?.Invoke();
-
             if (gameObject != null) health.Damage(value);
+            
+            OnHealth?.Invoke();
         }
 
         public void CheckHealth()

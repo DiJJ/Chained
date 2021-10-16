@@ -1,3 +1,4 @@
+using Main.Scripts.Actors.Enemy;
 using Main.Scripts.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;
