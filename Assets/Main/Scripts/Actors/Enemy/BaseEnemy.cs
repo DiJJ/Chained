@@ -3,7 +3,7 @@ using Main.Scripts.Enemy.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Main.Scripts.Enemy
+namespace Main.Scripts.Actors.Enemy
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BaseEnemy : MonoBehaviour, IEnemy

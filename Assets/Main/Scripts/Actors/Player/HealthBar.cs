@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Main.Scripts.Core;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UnityTemplateProjects.Actors.Player
