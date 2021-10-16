@@ -8,6 +8,8 @@ namespace Main.Scripts.Actors.Enemy
     [RequireComponent(typeof(Rigidbody2D))]
     public abstract class BaseEnemy : MonoBehaviour, IEnemy
     {
+        [SerializeField] private bool _enableAI = true;
+        
         protected Rigidbody2D rigidbody2D;
         protected Transform enemyTransform;
         protected Transform target;
@@ -15,24 +17,12 @@ namespace Main.Scripts.Actors.Enemy
         protected BaseEnemySO baseEnemySO;
         protected Health health;
         protected EnemyData enemyData;
-
-        public UnityEvent OnHealth;
-
-        public void SubscribeOnHealthEvent(UnityAction action)
-        {
-            OnHealth.AddListener(action);
-        }
-
+        
         protected virtual void Awake()
         {
             enemyTransform = transform;
 
             if (rigidbody2D == null) rigidbody2D = GetComponentInParent<Rigidbody2D>();
-        }
-
-        protected virtual void OnEnable()
-        {
-            SubscribeOnHealthEvent(CheckHealth);
         }
 
         public virtual void Setup(EnemyData enemyData)
@@ -45,6 +35,8 @@ namespace Main.Scripts.Actors.Enemy
 
         protected virtual void Update()
         {
+            if (!_enableAI) return;
+            
             Move();
         }
 
@@ -70,8 +62,6 @@ namespace Main.Scripts.Actors.Enemy
         public virtual void Damage(int value)
         {
             if (gameObject != null) health.Damage(value);
-            
-            OnHealth?.Invoke();
         }
 
         public void CheckHealth()
@@ -94,11 +84,6 @@ namespace Main.Scripts.Actors.Enemy
             }
 
             Debug.LogWarning("Missing reference to HealthManager");
-        }
-
-        protected virtual void OnDisable()
-        {
-            OnHealth.RemoveAllListeners();
         }
     }
 }

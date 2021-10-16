@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Main.Scripts.Core
 {
@@ -6,7 +7,10 @@ namespace Main.Scripts.Core
     {
         private int _healthPoints;
         private int _maxHealthPoints;
-    
+
+        public UnityEvent OnHealEvent;
+        public UnityEvent OnDamageEvent;
+
         public int Min { set; get; }
         public int Max
         {
@@ -38,6 +42,7 @@ namespace Main.Scripts.Core
             Min = 0;
             Max = 100;
             CurrentHealth = Max;
+            
         }
     
         public Health(int maximal)
@@ -64,11 +69,25 @@ namespace Main.Scripts.Core
         public void Damage(int value)
         {
             CurrentHealth -= value;
+            
+            OnDamageEvent?.Invoke();
         }
     
         public void Heal(int value)
         {
             CurrentHealth += value;
+            
+            OnHealEvent?.Invoke();
+        }
+
+        public void SubscribeOnHeal(UnityAction action)
+        {
+            OnHealEvent.AddListener(action);
+        }
+
+        public void SubscribeOnDamage(UnityAction action)
+        {
+            OnDamageEvent.AddListener(action);
         }
     }
 }
