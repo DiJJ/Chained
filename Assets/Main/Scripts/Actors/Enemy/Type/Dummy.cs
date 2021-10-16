@@ -1,6 +1,4 @@
-﻿using Main.Scripts.Actors.Enemy;
-
-namespace Main.Scripts.Enemy.Type
+﻿namespace Main.Scripts.Actors
 {
     public class Dummy : BaseEnemy
     {
