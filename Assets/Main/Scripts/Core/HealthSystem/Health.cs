@@ -8,8 +8,8 @@ namespace Main.Scripts.Core
         private int _healthPoints;
         private int _maxHealthPoints;
 
-        public UnityEvent OnHealEvent;
-        public UnityEvent OnDamageEvent;
+        public UnityEvent OnHealEvent = new UnityEvent();
+        public UnityEvent OnDamageEvent = new UnityEvent();
 
         public int Min { set; get; }
         public int Max
