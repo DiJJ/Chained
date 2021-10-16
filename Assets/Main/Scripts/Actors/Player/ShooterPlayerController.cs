@@ -6,7 +6,7 @@ namespace Main.Scripts.Actors.Player
 {
     public class ShooterPlayerController : MonoBehaviour
     {
-        [SerializeField] private ShooterSObj playerData;
+        [SerializeField] private ShooterSO playerData;
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private Transform gunPoint;
 

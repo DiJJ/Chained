@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultEnemyStats", menuName = "Game/Data/Enemy/DefaultEnemy")]
+[CreateAssetMenu(fileName = "EnemySO", menuName = "Game/SO/Enemy/Enemy")]
 public class DefaultBaseEnemySO : BaseEnemySO
 {
     

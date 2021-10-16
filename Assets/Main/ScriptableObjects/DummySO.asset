@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1694e18390f7ad1468bcc4cd2b8042b7, type: 3}
-  m_Name: DefaultEnemyStats
+  m_Script: {fileID: 11500000, guid: ba4b8ccb37b9b664380122ba2e1aff1e, type: 3}
+  m_Name: DummySO
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: e15a0aaf619d8aa429bd091186fb29a2, type: 3}
-  movementSpeed: 30
-  healthPoints: 20
-  attackDamage: 10
+  EnemyPrefab: {fileID: 1239146303787183107, guid: 59a15e36b3500a34389b68de7551a9b2, type: 3}
+  Sprite: {fileID: 0}
+  MovementSpeed: 1
+  HealthPoints: 3
+  AttackDamage: 1
+  StopDistance: 1

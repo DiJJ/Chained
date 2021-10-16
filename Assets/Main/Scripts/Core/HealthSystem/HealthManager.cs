@@ -7,8 +7,8 @@ public class HealthManager : MonoBehaviour
     private Health _damageReceiverHealth = new Health();
     private PlayersHp _currentReceiver;
 
-    [SerializeField] private PlayerSObj shooterPlayerData;
-    [SerializeField] private PlayerSObj supportPlayerData;
+    [SerializeField] private PlayerSO shooterPlayerData;
+    [SerializeField] private PlayerSO supportPlayerData;
     
     public ref Health ShooterHealth => ref _shooterHealth;
     public ref Health SupportHealth => ref _supportHealth;

@@ -3,6 +3,6 @@
     public static class TagConstants
     {
         public const string Player = "Player";
-        public const string HealthManager = "Health Manager";
+        public const string HealthManager = "HealthManager";
     }
 }

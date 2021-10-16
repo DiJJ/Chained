@@ -6,7 +6,7 @@ namespace Main.Scripts.Actors.Player
 {
     public class SupportPlayerController : MonoBehaviour
     {
-        [SerializeField] private PlayerSObj playerData;
+        [SerializeField] private PlayerSO playerData;
 
         private Vector2 _moveInputs;
         private Vector2 _lookInputs;
