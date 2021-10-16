@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1239146303787183107, guid: 59a15e36b3500a34389b68de7551a9b2, type: 3}
   Sprite: {fileID: 21300000, guid: e15a0aaf619d8aa429bd091186fb29a2, type: 3}
-  MovementSpeed: 0
+  MovementSpeed: 1
   HealthPoints: 3
-  AttackDamage: 1
+  AttackDamage: 5
   StopDistance: 1

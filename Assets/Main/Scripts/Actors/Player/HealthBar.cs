@@ -1,6 +1,5 @@
 ﻿using Main.Scripts.Core;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UnityTemplateProjects.Actors.Player
@@ -17,6 +16,12 @@ namespace UnityTemplateProjects.Actors.Player
             SetupSlider();
         }
 
+        private void Start()
+        {
+            _healthManager.ReceiverHealth.SubscribeOnDamage(UpdateHealth);
+            _healthManager.ReceiverHealth.SubscribeOnHeal(UpdateHealth);
+        }
+
         private void SetupSlider()
         {
             _slider.maxValue = _healthManager.ReceiverHealth.Max;
@@ -26,12 +31,6 @@ namespace UnityTemplateProjects.Actors.Player
         private void UpdateHealth()
         {
             _slider.value = _healthManager.ReceiverHealth.CurrentHealth;
-        }
-
-        private void OnEnable()
-        {
-            _healthManager.ReceiverHealth.SubscribeOnDamage(UpdateHealth);
-            _healthManager.ReceiverHealth.SubscribeOnHeal(UpdateHealth);
         }
     }
 }

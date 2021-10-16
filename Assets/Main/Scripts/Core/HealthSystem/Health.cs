@@ -69,7 +69,7 @@ namespace Main.Scripts.Core
         public void Damage(int value)
         {
             CurrentHealth -= value;
-            Debug.Log("AWdawa");
+            
             OnDamageEvent?.Invoke();
         }
     
