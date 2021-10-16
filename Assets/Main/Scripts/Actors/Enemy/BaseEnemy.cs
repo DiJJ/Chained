@@ -24,6 +24,11 @@ namespace Main.Scripts.Actors
             if (rigidbody2D == null) rigidbody2D = GetComponentInParent<Rigidbody2D>();
         }
 
+        protected virtual void Start()
+        {
+            health.SubscribeOnDamage(CheckHealth);
+        }
+        
         public virtual void Setup(EnemyData enemyData)
         {
             this.enemyData = enemyData;
