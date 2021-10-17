@@ -15,10 +15,9 @@ namespace Main.Scripts.Actors.Enemy
         protected Transform enemyTransform;
         protected Transform target;
 
-        protected BaseEnemySO baseEnemySO;
         protected Health enemyHealth;
         protected EnemyData enemyData;
-        
+
         protected virtual void Awake()
         {
             enemyTransform = transform;
@@ -34,8 +33,7 @@ namespace Main.Scripts.Actors.Enemy
         public virtual void Setup(EnemyData enemyData)
         {
             this.enemyData = enemyData;
-            baseEnemySO = enemyData.BaseEnemySO;
-            enemyHealth = new Health(baseEnemySO.HealthPoints);
+            enemyHealth = new Health(enemyData.BaseEnemySO.HealthPoints);
             target = enemyData.Target;
         }
 
@@ -52,10 +50,10 @@ namespace Main.Scripts.Actors.Enemy
 
             var distance = GetDistanceToTarget();
 
-            if (distance > baseEnemySO.StopDistance)
+            if (distance > enemyData.BaseEnemySO.StopDistance)
             {
                 enemyTransform.position = Vector2.MoveTowards(enemyTransform.position, target.position,
-                    baseEnemySO.MovementSpeed * Time.deltaTime);
+                    enemyData.BaseEnemySO.MovementSpeed * Time.deltaTime);
             }
         }
 
@@ -65,7 +63,7 @@ namespace Main.Scripts.Actors.Enemy
 
         public virtual void Attack(HealthManager healthManager)
         {
-            healthManager.Damage(baseEnemySO.AttackDamage);
+            healthManager.Damage(enemyData.BaseEnemySO.AttackDamage);
         }
 
         public virtual void Damage(int value)
