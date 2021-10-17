@@ -1,10 +1,9 @@
 using System.Collections;
-using Main.ScriptablesObjects;
-using Main.Scripts.Enemy;
+using Main.Scripts.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Main.Scripts.Core
+namespace Main.Scripts.Actors.Enemy
 {
     public class SpawnerManager : MonoBehaviour
     {

@@ -40,9 +40,9 @@ namespace Main.Scripts.Core
 
         void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.TryGetComponent(out IDamageable damageable))
+            if (other.gameObject.TryGetComponent(out IDamageable enemy))
             {
-                damageable.Damage(10);
+                enemy.Damage(10);
             }
 
             DestroyParticle();

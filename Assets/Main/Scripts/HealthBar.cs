@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Main.Scripts.Actors.Player
+namespace Main.Main.Scripts
 {
     public class HealthBar : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using Main.Scripts.Core;
-using Main.Scripts.Enemy;
+using Main.Scripts.Interface;
 
-namespace Main.Scripts.Interface
+namespace Main.Scripts.Actors.Enemy
 {
     public interface IEnemy : IDamageable
     {

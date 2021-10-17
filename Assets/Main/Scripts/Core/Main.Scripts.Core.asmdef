@@ -1,0 +1,17 @@
+{
+    "name": "Main.Scripts.Core",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c1cc7aa2daedb524ab854c5fe63664ab",
+        "GUID:1396fe03ddbbd224c8de453041820d04"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,5 +1,5 @@
 using DG.Tweening;
-using Main.ScriptablesObjects;
+using Main.ScriptableObjects;
 using Main.Scripts.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;

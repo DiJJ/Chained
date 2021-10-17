@@ -1,8 +1,7 @@
-using Main.Scripts.Actors.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Main.ScriptablesObjects
+namespace Main.Scripts.Actors.Enemy
 {
     public class BaseEnemySO : ScriptableObject
     {

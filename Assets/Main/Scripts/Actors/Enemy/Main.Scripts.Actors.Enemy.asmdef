@@ -1,0 +1,17 @@
+{
+    "name": "Main.Scripts.Actors.Enemy",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1396fe03ddbbd224c8de453041820d04",
+        "GUID:d3b95b6f5411ef647a0c1952a1db0d68"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

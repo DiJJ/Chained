@@ -1,4 +1,4 @@
-using Main.ScriptablesObjects;
+using Main.ScriptableObjects;
 using UnityEngine;
 
 namespace Main.Scripts.Core

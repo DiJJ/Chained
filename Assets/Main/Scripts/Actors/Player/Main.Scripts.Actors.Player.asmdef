@@ -1,0 +1,18 @@
+{
+    "name": "Main.Scripts.Actors.Player",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c1cc7aa2daedb524ab854c5fe63664ab",
+        "GUID:d3b95b6f5411ef647a0c1952a1db0d68",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

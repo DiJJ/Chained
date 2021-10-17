@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Main.ScriptablesObjects
+namespace Main.ScriptableObjects
 {
     public abstract class PlayerSO : ScriptableObject
     {
