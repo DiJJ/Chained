@@ -13,11 +13,11 @@ namespace Main.Scripts.Actors.Player
         private void Awake()
         {
             _healthManager = FindObjectOfType<HealthManager>();
-            SetupSlider();
         }
 
         private void Start()
         {
+            SetupSlider();
             _healthManager.ReceiverHealth.SubscribeOnDamageAction(UpdateHealth);
             _healthManager.ReceiverHealth.SubscribeOnHealAction(UpdateHealth);
         }
