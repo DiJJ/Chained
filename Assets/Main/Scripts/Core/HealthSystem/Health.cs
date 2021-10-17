@@ -8,8 +8,8 @@ namespace Main.Scripts.Core
         private int _healthPoints;
         private int _maxHealthPoints;
 
-        public UnityEvent OnHealEvent = new UnityEvent();
-        public UnityEvent OnDamageEvent = new UnityEvent();
+        public UnityAction OnHealAction;
+        public UnityAction OnDamageAction;
 
         public int Min { set; get; }
         public int Max
@@ -70,24 +70,24 @@ namespace Main.Scripts.Core
         {
             CurrentHealth -= value;
             
-            OnDamageEvent?.Invoke();
+            OnDamageAction?.Invoke();
         }
     
         public void Heal(int value)
         {
             CurrentHealth += value;
             
-            OnHealEvent?.Invoke();
+            OnHealAction?.Invoke();
         }
 
-        public void SubscribeOnHeal(UnityAction action)
+        public void SubscribeOnHealAction(UnityAction action)
         {
-            OnHealEvent.AddListener(action);
+            OnHealAction += action;
         }
 
-        public void SubscribeOnDamage(UnityAction action)
+        public void SubscribeOnDamageAction(UnityAction action)
         {
-            OnDamageEvent.AddListener(action);
+            OnDamageAction += action;
         }
     }
 }

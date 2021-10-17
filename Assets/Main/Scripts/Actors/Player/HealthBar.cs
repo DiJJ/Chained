@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UnityTemplateProjects.Actors.Player
+namespace Main.Scripts.Actors.Player
 {
     public class HealthBar : MonoBehaviour
     {
@@ -18,8 +18,8 @@ namespace UnityTemplateProjects.Actors.Player
 
         private void Start()
         {
-            _healthManager.ReceiverHealth.SubscribeOnDamage(UpdateHealth);
-            _healthManager.ReceiverHealth.SubscribeOnHeal(UpdateHealth);
+            _healthManager.ReceiverHealth.SubscribeOnDamageAction(UpdateHealth);
+            _healthManager.ReceiverHealth.SubscribeOnHealAction(UpdateHealth);
         }
 
         private void SetupSlider()

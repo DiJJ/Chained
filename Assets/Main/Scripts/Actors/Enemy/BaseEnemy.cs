@@ -28,7 +28,7 @@ namespace Main.Scripts.Actors.Enemy
 
         protected virtual void Start()
         {
-            enemyHealth.SubscribeOnDamage(CheckHealth);
+            enemyHealth.SubscribeOnDamageAction(CheckHealth);
         }
         
         public virtual void Setup(EnemyData enemyData)
