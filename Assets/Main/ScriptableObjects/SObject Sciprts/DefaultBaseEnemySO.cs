@@ -1,7 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemySO", menuName = "Game/SO/Enemy/Enemy")]
-public class DefaultBaseEnemySO : BaseEnemySO
+namespace Main.ScriptablesObjects
 {
+    [CreateAssetMenu(fileName = "EnemySO", menuName = "Game/SO/Enemy/Enemy")]
+    public class DefaultBaseEnemySO : BaseEnemySO
+    {
     
+    }
 }
+

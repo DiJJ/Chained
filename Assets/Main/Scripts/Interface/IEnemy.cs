@@ -1,9 +1,13 @@
 using Main.Scripts.Core;
-using Main.Scripts.Enemy.Data;
+using Main.Scripts.Enemy;
 
-public interface IEnemy : IDamageable
+namespace Main.Scripts.Interface
 {
-   void Setup(EnemyData enemyData);
-   void Move();
-   void Attack(HealthManager healthManager);
+    public interface IEnemy : IDamageable
+    {
+        void Setup(EnemyData enemyData);
+        void Move();
+        void Attack(HealthManager healthManager);
+    }
 }
+

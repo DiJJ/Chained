@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+namespace Main.Scripts.Scene
 {
-    private SceneManager _sceneManager;
-
-    private void Awake()
+    public class SceneLoader : MonoBehaviour
     {
-        SceneManager.LoadScene("_Main", LoadSceneMode.Additive);
+        private SceneManager _sceneManager;
+
+        private void Awake()
+        {
+            SceneManager.LoadScene("_Main", LoadSceneMode.Additive);
+        }
     }
 }
+

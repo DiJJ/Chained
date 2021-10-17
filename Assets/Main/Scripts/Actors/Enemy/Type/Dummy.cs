@@ -1,4 +1,4 @@
-﻿namespace Main.Scripts.Actors
+﻿namespace Main.Scripts.Actors.Enemy
 {
     public class Dummy : BaseEnemy
     {

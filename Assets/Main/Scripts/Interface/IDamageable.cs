@@ -1,4 +1,7 @@
-public interface IDamageable
+namespace Main.Scripts.Interface
 {
-    void Damage(int value);
+    public interface IDamageable
+    {
+        void Damage(int value);
+    }
 }

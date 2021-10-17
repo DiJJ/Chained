@@ -1,3 +1,4 @@
+using Main.ScriptablesObjects;
 using UnityEngine;
 
 namespace Main.Scripts.Core

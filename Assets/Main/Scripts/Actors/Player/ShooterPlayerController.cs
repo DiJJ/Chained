@@ -1,4 +1,6 @@
 using DG.Tweening;
+using Main.ScriptablesObjects;
+using Main.Scripts.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

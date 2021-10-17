@@ -1,49 +1,51 @@
-using System;
-using Main.Scripts.Enemy;
+using Main.Scripts.Interface;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace Main.Scripts.Core
 {
-    private Rigidbody2D _rb2d;
-    private Timer _destroyTimer;
-    [SerializeField] private float destroyTime = 2f;
-    [SerializeField] private ParticleSystem particles;
-
-    private void Awake()
+    public class Bullet : MonoBehaviour
     {
-        _rb2d = GetComponent<Rigidbody2D>();
-    }
+        private Rigidbody2D _rb2d;
+        private Timer _destroyTimer;
+        [SerializeField] private float destroyTime = 2f;
+        [SerializeField] private ParticleSystem particles;
 
-    private void Start()
-    {
-        _rb2d.velocity = transform.right * 20f;
-
-        _destroyTimer = gameObject.AddComponent<Timer>();
-        _destroyTimer.TimeInSeconds = destroyTime;
-        _destroyTimer.StartTimer();
-    }
-
-    private void Update()
-    {
-        if (!_destroyTimer.isTurnedOn)
-            Destroy(gameObject);
-    }
-
-    private void DestroyParticle()
-    {
-        particles.transform.parent = null;
-        particles.Play();
-        Destroy(particles.gameObject, destroyTime);
-        Destroy(gameObject);
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.TryGetComponent(out IDamageable damageable))
+        private void Awake()
         {
-            damageable.Damage(10);
+            _rb2d = GetComponent<Rigidbody2D>();
         }
 
-        DestroyParticle();
-    }
+        private void Start()
+        {
+            _rb2d.velocity = transform.right * 20f;
+
+            _destroyTimer = gameObject.AddComponent<Timer>();
+            _destroyTimer.TimeInSeconds = destroyTime;
+            _destroyTimer.StartTimer();
+        }
+
+        private void Update()
+        {
+            if (!_destroyTimer.isTurnedOn)
+                Destroy(gameObject);
+        }
+
+        private void DestroyParticle()
+        {
+            particles.transform.parent = null;
+            particles.Play();
+            Destroy(particles.gameObject, destroyTime);
+            Destroy(gameObject);
+        }
+
+        void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.Damage(10);
+            }
+
+            DestroyParticle();
+        }
+    }   
 }

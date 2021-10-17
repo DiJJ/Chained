@@ -1,5 +1,6 @@
 using System.Collections;
-using Main.Scripts.Enemy.Data;
+using Main.ScriptablesObjects;
+using Main.Scripts.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

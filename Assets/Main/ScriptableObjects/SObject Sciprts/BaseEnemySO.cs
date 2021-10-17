@@ -1,14 +1,18 @@
-using Main.Scripts.Actors;
+using Main.Scripts.Actors.Enemy;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class BaseEnemySO : ScriptableObject
+namespace Main.ScriptablesObjects
 {
-    [BoxGroup("Enemy Setup")] public BaseEnemy EnemyPrefab;
-    [BoxGroup("Enemy Setup")] public Sprite Sprite;
+    public class BaseEnemySO : ScriptableObject
+    {
+        [BoxGroup("Enemy Setup")] public BaseEnemy EnemyPrefab;
+        [BoxGroup("Enemy Setup")] public Sprite Sprite;
     
-    [BoxGroup("Enemy Settings"), Range(0f, 50f)] public float MovementSpeed = 1f;
-    [BoxGroup("Enemy Settings"),MinValue(1)] public int HealthPoints = 1;
-    [BoxGroup("Enemy Settings"), MinValue(1)] public int AttackDamage = 5;
-    [BoxGroup("Enemy Settings"), MinValue(.1f)] public float StopDistance = 1f;
+        [BoxGroup("Enemy Settings"), Range(0f, 50f)] public float MovementSpeed = 1f;
+        [BoxGroup("Enemy Settings"),MinValue(1)] public int HealthPoints = 1;
+        [BoxGroup("Enemy Settings"), MinValue(1)] public int AttackDamage = 5;
+        [BoxGroup("Enemy Settings"), MinValue(.1f)] public float StopDistance = 1f;
+    }
 }
+

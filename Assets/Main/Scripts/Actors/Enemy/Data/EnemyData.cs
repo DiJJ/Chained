@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Main.ScriptablesObjects;
+using UnityEngine;
 
-namespace Main.Scripts.Enemy.Data
+namespace Main.Scripts.Enemy
 {
     public class EnemyData
     {

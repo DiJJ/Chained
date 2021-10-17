@@ -1,4 +1,4 @@
-﻿namespace UnityTemplateProjects.Interface
+﻿namespace Main.Scripts.Interface
 {
     public interface ICollectable
     {
