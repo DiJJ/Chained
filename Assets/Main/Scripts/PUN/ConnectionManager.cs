@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Main.Main.Scripts.Managers;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine;
 
-namespace Main
+namespace Main.Main.Scripts.PUN
 {
     public class ConnectionManager : MonoBehaviourPunCallbacks
     {
-        // Start is called before the first frame update
         void Start()
         {
             print("Connection to master");
+            PhotonNetwork.NickName = MasterManager.Instance.GameSettings.NickName;
+            PhotonNetwork.GameVersion = MasterManager.Instance.GameSettings.GameVersion;
             
             PhotonNetwork.ConnectUsingSettings();
         }
@@ -20,6 +18,7 @@ namespace Main
         public override void OnConnectedToMaster()
         {
             print("Connected to master");
+            print(PhotonNetwork.LocalPlayer.NickName);
         }
 
         public override void OnDisconnected(DisconnectCause cause)
