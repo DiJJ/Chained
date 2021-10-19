@@ -9,8 +9,8 @@ namespace Main.Main.Scripts.PUN
         void Start()
         {
             print("Connection to master");
-            PhotonNetwork.NickName = MasterManager.Instance.GameSettings.NickName;
-            PhotonNetwork.GameVersion = MasterManager.Instance.GameSettings.GameVersion;
+            PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
+            PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
             
             PhotonNetwork.ConnectUsingSettings();
         }

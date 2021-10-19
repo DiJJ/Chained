@@ -7,6 +7,6 @@ namespace Main.Main.Scripts.Managers
     {
         [SerializeField] private GameSettings _gameSettings;
 
-        public GameSettings GameSettings => Instance._gameSettings;
+        public static GameSettings GameSettings => Instance._gameSettings;
     }
 }
