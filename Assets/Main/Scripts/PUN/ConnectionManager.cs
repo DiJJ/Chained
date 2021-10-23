@@ -1,29 +1,33 @@
-using Main.Main.Scripts.Managers;
+using Main.Scripts.Managers;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine;
 
-namespace Main.Main.Scripts.PUN
+namespace Main.Scripts.PUN
 {
     public class ConnectionManager : MonoBehaviourPunCallbacks
     {
         void Start()
         {
-            print("Connection to master");
-            PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
-            PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
+            Debug.Log("Connecting to master", this);
+
+            PhotonNetwork.NickName = MasterManagerSO.GameSettingsSO.NickName;
+            PhotonNetwork.GameVersion = MasterManagerSO.GameSettingsSO.GameVersion;
             
             PhotonNetwork.ConnectUsingSettings();
         }
 
         public override void OnConnectedToMaster()
         {
-            print("Connected to master");
-            print(PhotonNetwork.LocalPlayer.NickName);
+            Debug.Log("Connected to master", this);
+            Debug.Log($"Player's nickname is: {PhotonNetwork.LocalPlayer.NickName}", this);
+
+            if (!PhotonNetwork.InLobby) PhotonNetwork.JoinLobby();
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            print($"Player has disconnect: {cause.ToString()}");
+            Debug.Log($"Player has disconnect: {cause.ToString()}", this);
         }
     }
 }

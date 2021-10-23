@@ -80,14 +80,14 @@ namespace Main.Scripts.Core
             OnHealAction?.Invoke();
         }
 
-        public void SubscribeOnHealAction(UnityAction action)
+        public void SubscribeOnHealAction(UnityAction callback)
         {
-            OnHealAction += action;
+            OnHealAction += callback;
         }
 
-        public void SubscribeOnDamageAction(UnityAction action)
+        public void SubscribeOnDamageAction(UnityAction callback)
         {
-            OnDamageAction += action;
+            OnDamageAction += callback;
         }
     }
 }

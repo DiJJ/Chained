@@ -1,36 +1,33 @@
 using UnityEngine;
 
-namespace Main.Main.Scripts.Managers
+public class SingletonScriptableObject<T> : ScriptableObject where T : ScriptableObject
 {
-    public class SingletonScriptableObject<T> : ScriptableObject where T : ScriptableObject
+    private static T _instance;
+
+    public static T Instance
     {
-        private static T _instance;
-
-        public static T Instance
+        get
         {
-            get
+            if (_instance == null)
             {
-                if (_instance == null)
+                T[] results = Resources.FindObjectsOfTypeAll<T>();
+
+                if (results.Length == 0)
                 {
-                    T[] results = Resources.FindObjectsOfTypeAll<T>();
-
-                    if (results.Length == 0)
-                    {
-                        Debug.LogError($"SingletonScriptableObject -> Instance -> results length is 0 for type: {typeof(T)}");
-                        return null;
-                    }
-
-                    if (results.Length > 1)
-                    {
-                        Debug.LogError($"SingletonScriptableObject -> Instance -> results length greater than 1 for type: {typeof(T)}");
-                        return null;
-                    }
-
-                    _instance = results[0];
+                    Debug.LogError($"SingletonScriptableObject -> Instance -> results length is 0 for type: {typeof(T)}");
+                    return null;
                 }
 
-                return _instance;
+                if (results.Length > 1)
+                {
+                    Debug.LogError($"SingletonScriptableObject -> Instance -> results length greater than 1 for type: {typeof(T)}");
+                    return null;
+                }
+
+                _instance = results[0];
             }
+
+            return _instance;
         }
     }
 }

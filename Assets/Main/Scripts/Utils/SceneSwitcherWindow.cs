@@ -1,4 +1,4 @@
-﻿using System;
+﻿#if UNITY_EDITOR
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace Main.Scripts.Utils
 {
+    
     public class SceneSwitcherWindow : EditorWindow
     {
         private List<string> _scenePaths;
@@ -81,3 +82,4 @@ namespace Main.Scripts.Utils
         }
     }
 }
+#endif
