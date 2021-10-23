@@ -55,6 +55,7 @@
       <Path>Library/PackageCache/com.unity.textmeshpro@3.0.6</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.5.5</Path>
       <Path>Library/PackageCache/com.unity.ugui@1.0.0</Path>
+      <Path>Library/PackageCache/com.unity.ui.builder@1.0.0-preview.18</Path>
       <Path>Library/PackageCache/com.unity.visualscripting@1.6.1</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
@@ -62,6 +63,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
