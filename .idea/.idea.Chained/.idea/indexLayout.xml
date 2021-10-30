@@ -5,6 +5,7 @@
     <explicitIncludes>
       <Path>Library/PackageCache/com.unity.2d.pixel-perfect@5.0.0</Path>
       <Path>Library/PackageCache/com.unity.2d.sprite@1.0.0</Path>
+      <Path>Library/PackageCache/com.unity.addressables@1.16.19</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.7.4</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.5.7</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.6</Path>
@@ -49,6 +50,7 @@
       <Path>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.core@10.5.0</Path>
       <Path>Library/PackageCache/com.unity.render-pipelines.universal@10.5.0</Path>
+      <Path>Library/PackageCache/com.unity.scriptablebuildpipeline@1.15.2</Path>
       <Path>Library/PackageCache/com.unity.searcher@4.3.2</Path>
       <Path>Library/PackageCache/com.unity.shadergraph@10.5.0</Path>
       <Path>Library/PackageCache/com.unity.test-framework@1.1.24</Path>

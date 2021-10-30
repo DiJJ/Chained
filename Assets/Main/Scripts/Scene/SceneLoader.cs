@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,11 +6,17 @@ namespace Main.Scripts.Scene
 {
     public class SceneLoader : MonoBehaviour
     {
-        private SceneManager _sceneManager;
-
+        [BoxGroup("Scene Loader Settings"), SerializeField] private string _sceneName = "_Main";
+        [BoxGroup("Scene Loader Settings"), SerializeField] private LoadSceneMode _loadSceneMode = LoadSceneMode.Additive;
+        
         private void Awake()
         {
-            SceneManager.LoadScene("_Main", LoadSceneMode.Additive);
+            LoadScene(_sceneName, _loadSceneMode);
+        }
+
+        private void LoadScene(string sceneName, LoadSceneMode loadSceneMode)
+        {
+            SceneManager.LoadScene(sceneName, loadSceneMode);
         }
     }
 }

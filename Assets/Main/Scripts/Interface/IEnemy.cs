@@ -1,13 +1,10 @@
-using Main.Scripts.Core;
-using Main.Scripts.Enemy;
-
 namespace Main.Scripts.Interface
 {
-    public interface IEnemy : IDamageable
+    public interface IEnemy<T, U> : IDamageable
     {
-        void Setup(EnemyData enemyData);
+        void Setup(T enemyData);
         void Move();
-        void Attack(HealthManager healthManager);
+        void Attack(U healthManager);
     }
 }
 

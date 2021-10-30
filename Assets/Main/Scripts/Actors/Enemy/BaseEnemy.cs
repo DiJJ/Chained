@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Main.Scripts.Actors.Enemy
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public abstract class BaseEnemy : MonoBehaviour, IEnemy
+    public abstract class BaseEnemy : MonoBehaviour, IEnemy<EnemyData, HealthManager>
     {
         [SerializeField] private bool _enableAI = true;
         
