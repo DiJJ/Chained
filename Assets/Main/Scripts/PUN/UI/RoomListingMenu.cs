@@ -1,23 +1,22 @@
 using System.Collections.Generic;
-using Photon.Pun;
 using Photon.Realtime;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Main.Scripts.PUN
+namespace Main.Scripts.PUN.UI
 {
-    public class RoomListingMenu : MonoBehaviourPunCallbacks
+    public class RoomListingMenu : BaseListingMenu<RoomElement>
     {
-        [BoxGroup("Room Listing Setup"), SerializeField, Required] private Transform _content;
-        [BoxGroup("Room Listing Setup"), SerializeField, Required] private RoomElement _roomElementPrefab;
+        public override void OnJoinedRoom()
+        {
+            canvasManager.CreateOrJoinRoomCanvas.Hide();
+            canvasManager.CurrentRoomCanvas.Show();
+        }
 
-        private List<RoomElement> _rooms = new List<RoomElement>();
-        
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            if (_roomElementPrefab == null)
+            if (elementPrefab == null)
             {
-                Debug.LogError($"Missing reference {_roomElementPrefab}");
+                Debug.LogError($"Missing reference {elementPrefab}");
                 return;
             }
             
@@ -25,15 +24,15 @@ namespace Main.Scripts.PUN
             {
                 if (info.RemovedFromList)
                 {
-                    var index = _rooms.FindIndex(x => x.RoomInfo.Name == info.Name);
-                    Destroy(_rooms[index].gameObject);
-                    _rooms.RemoveAt(index);
+                    var index = elements.FindIndex(x => x.Element.Name == info.Name);
+                    Destroy(elements[index].gameObject);
+                    elements.RemoveAt(index);
                     continue;
                 }
                 
-                var room = Instantiate(_roomElementPrefab, _content);
-                room.SetRoomInfo(info);
-                _rooms.Add(room);
+                var room = Instantiate(elementPrefab, content);
+                room.SetElementInfo(info);
+                elements.Add(room);
             }
         }
     }

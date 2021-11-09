@@ -8,8 +8,8 @@ namespace Main.Scripts.PUN
         [SerializeField] private BaseCanvas _createOrJoinRoomCanvas;
         [SerializeField] private BaseCanvas _currentRoomCanvas;
 
-        public CreateOrJoinRoomCanvas CreateOrJoinRoomCanvas => (CreateOrJoinRoomCanvas) _createOrJoinRoomCanvas;
-        public CurrentRoomCanvas CurrentRoomCanvas => (CurrentRoomCanvas) _currentRoomCanvas;
+        public CreateOrJoinRoomCanvas CreateOrJoinRoomCanvas => _createOrJoinRoomCanvas as CreateOrJoinRoomCanvas;
+        public CurrentRoomCanvas CurrentRoomCanvas => _currentRoomCanvas as CurrentRoomCanvas;
 
         private void Awake()
         {

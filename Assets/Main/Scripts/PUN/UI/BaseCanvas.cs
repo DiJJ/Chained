@@ -1,18 +1,16 @@
 ﻿using Main.Scripts.Interface;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Main.Scripts.PUN
 {
     public abstract class BaseCanvas : MonoBehaviour, IBaseCanvas<CanvasManager>
     {
-        [SerializeField] private CreateRoomMenu _createRoomMenu;
-        
         public CanvasManager CanvasManager { get; set; }
         
-        public void Setup(CanvasManager canvasManager)
+        public virtual void Setup(CanvasManager canvasManager)
         {
             CanvasManager = canvasManager;
-            _createRoomMenu.Setup(canvasManager);
         }
 
         public virtual void Show()

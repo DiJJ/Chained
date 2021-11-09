@@ -10,6 +10,7 @@ namespace Main.Scripts.Utils
     public class SceneSwitcherWindow : EditorWindow
     {
         private List<string> _scenePaths;
+        private Vector2 _scrollPos;
 
         [MenuItem("Tools/Scene Switcher")]
         private static void ShowWindow()
@@ -32,15 +33,15 @@ namespace Main.Scripts.Utils
                 OnEnable();
             }
 
-            #region Hardcoded Scenes
-
-            AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("Initialization")), "Initialization"));
-            AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("_Main")), "Main"));
-            AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("Rooms")), "PUN Room"));
-            AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("chillroom")), "Chill room"));
-            AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("HornyRoom")), "HornyRoom"));
-
-            #endregion
+            // #region Hardcoded Scenes
+            //
+            // AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("Initialization")), "Initialization"));
+            // AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("_Main")), "Main"));
+            // AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("Rooms")), "PUN Room"));
+            // AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("chillroom")), "Chill room"));
+            // AddButton(new SceneDataWindow(_scenePaths.FirstOrDefault(scene => scene.Contains("HornyRoom")), "HornyRoom"));
+            //
+            // #endregion
 
             GUILayout.Space(20);
             
@@ -48,15 +49,25 @@ namespace Main.Scripts.Utils
 
             GUILayout.Label("Dynamic Scenes");
 
+            
             EditorGUILayout.BeginVertical();
+            
+            _scrollPos = EditorGUILayout.BeginScrollView(_scrollPos);
+            
             {
                 foreach (string scene in _scenePaths)
                 {
                     if (!scene.Contains("Main/_Scenes")) continue;
+
+                    var splitedPath = scene.Split('/');
+                    var sceneNameWithoutFormat = splitedPath[3].Split('.');
                     
-                    AddButton(new SceneDataWindow(scene, scene));
+                    AddButton(new SceneDataWindow(scene, sceneNameWithoutFormat[0]));
                 }
             }
+
+            EditorGUILayout.EndScrollView();
+            
             EditorGUILayout.EndVertical();
 
             #endregion
