@@ -10,6 +10,8 @@ public class SpawnerManager : MonoBehaviour
     [SerializeField] private bool _spawnAtOnce = false;
     [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _startTime = 1;
     [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _repeatTime = 3;
+    [FoldoutGroup("Settings")] [HideIf(nameof(_spawnAtOnce))] [SerializeField] private float _rangeMin = 1;
+    [FoldoutGroup("Settings")] [HideIf(nameof(_spawnAtOnce))] [SerializeField] private float _rangeMax = 10;
 
     private void Start()
     {
@@ -26,7 +28,8 @@ public class SpawnerManager : MonoBehaviour
 
     private void Spawn()
     {
-        var enemy = Instantiate(_baseEnemySO.EnemyPrefab, transform.position, Quaternion.identity);
+        var randomPosition = new Vector2(Random.Range(_rangeMin, _rangeMax), Random.Range(_rangeMin, _rangeMax));
+        var enemy = Instantiate(_baseEnemySO.EnemyPrefab, randomPosition, Quaternion.identity);
         enemy.Setup(new EnemyData
         {
             BaseEnemySO = _baseEnemySO, Target = _target
