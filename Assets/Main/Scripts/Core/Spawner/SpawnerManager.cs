@@ -1,60 +1,38 @@
-using System.Collections;
-using Main.ScriptablesObjects;
-using Main.Scripts.Enemy;
+using Main.Scripts.Core;
+using Main.Scripts.Enemy.Data;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Main.Scripts.Core
+public class SpawnerManager : MonoBehaviour
 {
-    public class SpawnerManager : MonoBehaviour
+    [FoldoutGroup("Scriptable Object")][SerializeField] private BaseEnemySO _baseEnemySO;
+    private Transform _target;
+    [SerializeField] private bool _spawnAtOnce = false;
+    [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _startTime = 1;
+    [FoldoutGroup("Settings")][HideIf(nameof(_spawnAtOnce))][SerializeField] private float _repeatTime = 3;
+    [FoldoutGroup("Settings")] [HideIf(nameof(_spawnAtOnce))] [SerializeField] private float _rangeMin = 1;
+    [FoldoutGroup("Settings")] [HideIf(nameof(_spawnAtOnce))] [SerializeField] private float _rangeMax = 10;
+
+    private void Start()
     {
-        [FoldoutGroup("Scriptable Object"), InlineEditor(), SerializeField]
-        private BaseEnemySO _baseEnemySO;
-
-        private Transform _target;
-
-        [SerializeField] private bool _repeatingSpawn = true;
-        [FoldoutGroup("Settings"), ShowIf(nameof(_repeatingSpawn)), SerializeField]
-        private float _delaySpawnTime = 3;
-        [FoldoutGroup("Settings"), SerializeField]
-        private float _spawnRange = 3f;
-
-        private void Start()
+        _target = GameObject.FindGameObjectWithTag(TagConstants.Player).transform;
+        if (_spawnAtOnce == false)
         {
-            _target = GameObject.FindGameObjectWithTag(TagConstants.Player).transform;
-
-            if (_repeatingSpawn)
-            {
-                StartCoroutine(SpawnRoutine());
-                return;
-            }
-
+            InvokeRepeating(nameof(Spawn), _startTime, _repeatTime);
+        }
+        else
+        {
             Spawn();
         }
+    }
 
-        private void Spawn()
+    private void Spawn()
+    {
+        var randomPosition = new Vector2(Random.Range(_rangeMin, _rangeMax), Random.Range(_rangeMin, _rangeMax));
+        var enemy = Instantiate(_baseEnemySO.EnemyPrefab, randomPosition, Quaternion.identity);
+        enemy.Setup(new EnemyData
         {
-            var enemy = Instantiate(_baseEnemySO.EnemyPrefab, transform.position, Quaternion.identity);
-            
-            enemy.Setup(new EnemyData
-            {
-                BaseEnemySO = _baseEnemySO,
-                Target = _target
-            });
-        }
-
-        private IEnumerator SpawnRoutine()
-        {
-            while (_repeatingSpawn)
-            {
-                Spawn();
-                yield return new WaitForSeconds(_delaySpawnTime);
-            }
-        }
-
-        private void OnDisable()
-        {
-            StopAllCoroutines();
-        }
+            BaseEnemySO = _baseEnemySO, Target = _target
+        });
     }
 }
