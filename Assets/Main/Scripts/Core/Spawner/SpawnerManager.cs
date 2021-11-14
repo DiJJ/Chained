@@ -16,6 +16,8 @@ namespace Main.Scripts.Core
         [SerializeField] private bool _repeatingSpawn = true;
         [FoldoutGroup("Settings"), ShowIf(nameof(_repeatingSpawn)), SerializeField]
         private float _delaySpawnTime = 3;
+        [FoldoutGroup("Settings"), SerializeField]
+        private float _spawnRange = 3f;
 
         private void Start()
         {
@@ -33,6 +35,7 @@ namespace Main.Scripts.Core
         private void Spawn()
         {
             var enemy = Instantiate(_baseEnemySO.EnemyPrefab, transform.position, Quaternion.identity);
+            
             enemy.Setup(new EnemyData
             {
                 BaseEnemySO = _baseEnemySO,

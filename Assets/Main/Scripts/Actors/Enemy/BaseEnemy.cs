@@ -26,11 +26,13 @@ namespace Main.Scripts.Actors.Enemy
 
         protected virtual void Start()
         {
-            enemyHealth.SubscribeOnDamageAction(CheckHealth);
+            enemyHealth?.SubscribeOnDamageAction(CheckHealth);
         }
         
         public virtual void Setup(EnemyData enemyData)
         {
+            if (enemyData == null) return;
+            
             this.enemyData = enemyData;
             enemyHealth = new Health(enemyData.BaseEnemySO.HealthPoints);
             target = enemyData.Target;
